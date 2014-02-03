@@ -1,0 +1,36 @@
+<template name="createfactoid">
+  {{#autoForm schema=factoidsCollection id="createfactoid" validation="keyup"}}
+  <div class="form-group {{#if afFieldIsInvalid 'claim'}} has-error{{/if}}">
+    {{afFieldLabel 'claim'}}
+    {{afFieldInput 'claim' placeholder="What you're fact-checking" autofocus="true"}}
+    {{#if afFieldIsInvalid 'claim'}}
+      <span class="help-block">{{afFieldMessage 'claim'}}</span>
+    {{/if}}
+  </div>
+  <div class="form-group {{#if afFieldIsInvalid 'discussion'}} has-error{{/if}}">
+    {{afFieldLabel 'discussion'}}
+    {{afFieldInput 'discussion' rows="7" placeholder="What's right and wrong about it. Keep it short &amp; sweet!"}}
+    {{#if afFieldIsInvalid 'discussion'}}
+      <span class="help-block">{{afFieldMessage 'discussion'}}</span>
+    {{/if}}
+  </div>
+  <div class="form-group {{#if afFieldIsInvalid 'reference'}} has-error{{/if}}">
+    {{afFieldLabel 'reference'}}
+    {{afFieldInput 'reference' placeholder="http://example.com/source"}}
+    {{#if afFieldIsInvalid 'reference'}}
+      <span class="help-block">{{afFieldMessage 'reference'}}</span>
+    {{/if}}
+  </div>
+  <div class="form-group {{#if afFieldIsInvalid 'verdict'}} has-error{{/if}}">
+    {{afFieldLabel 'verdict'}}
+    {{afFieldInput 'verdict' options="allowed" capitalize="true" noselect="true"}}
+  </div>
+  {{#unless currentUser}}
+    <div class="alert alert-info">
+      <i class="glyphicon glyphicon-info-sign"></i>
+      You'll need to log in before you can create this fact check.
+    </div>
+  {{/unless}}
+  <button type="submit" class="btn btn-lg btn-block btn-primary insert">Create Fact Check</button>
+  {{/autoForm}}
+</template>
