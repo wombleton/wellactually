@@ -7,3 +7,10 @@ standard-app-packages
 autopublish
 insecure
 preserve-inputs
+accounts-twitter
+iron-router
+bootstrap-3
+accounts-password
+accounts-ui
+collection2
+autoform
