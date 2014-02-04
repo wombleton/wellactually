@@ -1,4 +1,4 @@
-/*global Meteor, SchemaRegEx */
+/*global Meteor */
 Factoids = new Meteor.Collection2('factoids', {
   schema: {
     claim: {
@@ -7,11 +7,17 @@ Factoids = new Meteor.Collection2('factoids', {
       max: 140,
       min: 1
     },
+    summary: {
+      type: String,
+      label: 'Summary',
+      min: 1,
+      max: 200
+    },
     discussion: {
       type: String,
       label: 'Discussion',
       min: 1,
-      max: 2000
+      max: 5000
     },
     reference: {
       type: String,
