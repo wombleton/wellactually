@@ -1,3 +1,9 @@
 <template name="home">
-  <a href="/create" class="btn btn-primary btn-lg">Add factcheck</a>
+  <a href="/create" class="btn btn-block btn-primary btn-lg">Add factcheck</a>
+  <ul class="list-group">
+  {{#each factoids}}
+    {{> factoid_summary}}
+  {{/each}}
+  </ul>
+  <a href="/create" class="btn btn-block btn-primary btn-lg">Add factcheck</a>
 </template>
