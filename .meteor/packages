@@ -10,6 +10,4 @@ iron-router
 bootstrap-3
 accounts-password
 accounts-ui
-collection2
-autoform
 paginated-subscription
